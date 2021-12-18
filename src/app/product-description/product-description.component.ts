@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { ProductService } from "../product.service";
+import { Component, OnInit } from '@angular/core';
+import { Album } from '../album';
+import { ProductService } from '../product.service';
 
 @Component({
-  selector: "app-product-description",
-  templateUrl: "./product-description.component.html",
-  styleUrls: ["./product-description.component.css"],
+  selector: 'app-product-description',
+  templateUrl: './product-description.component.html',
+  styleUrls: ['./product-description.component.css'],
 })
 export class ProductDescriptionComponent implements OnInit {
-  albumInfo: any;
+  albumInfo: Album;
 
   constructor(private _productService: ProductService) { }
 
@@ -17,5 +18,3 @@ export class ProductDescriptionComponent implements OnInit {
       .subscribe(response => this.albumInfo = response);
   }
 }
-
-//.subscribe(response => (this.albumInfo = response))
